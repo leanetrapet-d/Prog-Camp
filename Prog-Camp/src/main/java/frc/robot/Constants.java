@@ -135,6 +135,8 @@ public final class Constants {
     public static final int INTAKE_LEFT_ID = 18; // unknown
     public static final int INTAKE_RIGHT_ID = 19; // unknown
 
+  
+
     // PID Constants
     public static final double p = 0.006155;
     public static final double i = 0.000;
@@ -151,6 +153,52 @@ public final class Constants {
     public static final double OUTTAKE_RPM = 12500;
 
   }
+
+  public static class HopperConstants {
+    public static final int HOPPER_LEFT_ID = 16; // unknown
+    public static final int HOPPER_RIGHT_ID = 17; // unknown
+
+  
+
+    // PID Constants
+    public static final double p = 0.006155;
+    public static final double i = 0.000;
+    public static final double d = 0.01;
+
+    // Feed-Forward Constants
+    public static final double s = 1.25;
+    public static final double v = 0.5;
+    public static final double a = 0.75;
+
+
+    public static final double HOPPER_RPM = -12500;
+    public static final double REVERSEHOPPER_RPM = 12500;
+
+  }
+    
+  public static class KickerConstants {
+    public static final int KICKER_LEFT_ID = 16; // unknown
+    public static final int KICKER_RIGHT_ID = 17; // unknown
+
+  
+
+    // PID Constants
+    public static final double p = 0.006155;
+    public static final double i = 0.000;
+    public static final double d = 0.01;
+
+    // Feed-Forward Constants
+    public static final double s = 1.25;
+    public static final double v = 0.5;
+    public static final double a = 0.75;
+
+
+    public static final double KICKER_RPM = -12500;
+    public static final double REVERSEKICKER_RPM = 12500;
+
+  } 
+
+
 
   public static class ShooterConstants {
     public static final int SHOOTER_L1_ID = 9;
@@ -179,7 +227,6 @@ public final class Constants {
     public static final double v = 0.00169;
     public static final double a = 0.0;
 
-
     public final static InterpolatingDoubleTreeMap TOF = new InterpolatingDoubleTreeMap();
 
     static { // 7-12 are estimates - Aditya
@@ -198,6 +245,29 @@ public final class Constants {
         TOF.put(entry.getFirst().in(Meters), entry.getSecond().in(Seconds));
       }
     }
+  }
+    public static class PushOutConstants {
+    public static final int PUSHOUT_LEFT_ID = 15; // unknown
+    public static final int PUSHOUT_RIGHT_ID = 14; // unknown
+
+
+    // PID Constants
+    public static final double p = 0.006155;
+    public static final double i = 0.000;
+    public static final double d = 0.01;
+
+    // Feed-Forward Constants
+    public static final double s = 1.25;
+    public static final double v = 0.5;
+    public static final double a = 0.75;
+
+
+    public static final double Extended_Position = 15;
+    public static final double Retracted_Position = 1;
+
+  
+
+    
   }
 
   public static final double X_REEF_ALIGNMENT_P = 2.1; // Proportional gain for X-axis reef alignment
