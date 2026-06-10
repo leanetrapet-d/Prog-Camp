@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -78,6 +79,22 @@ public class Pushout extends SubsystemBase {
         return stopPushOutCommand();
     }
 
+    public Command runAgitationCommand()
+    {
+        //list
+        double[] pull_position = {11,9,7,5};
+        return Command.sequence(Commands.run(()-> {for (int i = 0;i<4;i++)
+        {
+                PushOutController.setSetpoint(pull_position[i],
+                ControlType.kMAXMotionPositionControl);
+        PushOutController.setSetpoint(PushOutConstants.Extended_Position,
+                ControlType.kMAXMotionPositionControl); 
+        }}), this);
+
+
+
+    }
+
     @Override
     public void periodic() {
         // AdvantageKit Logging
@@ -90,6 +107,8 @@ public class Pushout extends SubsystemBase {
         Logger.recordOutput("PushOut/AppliedVolts", PushOutMotor.getAppliedOutput() * PushOutMotor.getBusVoltage());
         Logger.recordOutput("PushOutRightRPM", RightRPM);
         Logger.recordOutput("PushOutLeftRPM", LeftRPM);
+
+
 
 
     }

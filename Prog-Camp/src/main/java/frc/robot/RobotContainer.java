@@ -60,7 +60,7 @@ import swervelib.SwerveInputStream;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.networktables.LoggedDashboardChooser;
 
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.*;
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a "declarative" paradigm, very
@@ -82,9 +82,14 @@ public class RobotContainer {
 
   // Instantiate Subsystems
   private final Intake m_intake = new Intake();
+  private final Pushout m_pushout = new Pushout();
+  private final Shooter m_shooter = new Shooter();
+  private final Hopper m_hopper = new Hopper();
+  private final Kicker m_kicker = new Kicker();
 
       private Trigger X_runIntake;
     private Trigger A_runOuttake;
+
 
   // Helper Subsystems
   // private final ObjectDetection m_ObjectDetection = new ObjectDetection();
@@ -320,9 +325,40 @@ public class RobotContainer {
   
 
     // intake
-    X_runIntake.whileTrue(m_intake.runIntakeCommand());
+    // X_runIntake.whileTrue(m_intake.runIntakeCommand());
     A_runOuttake.whileTrue(m_intake.runOuttakeCommand());
 
+    // dc().rightTrigger().whileTrue(m_pushout.runPushOutCommand());
+    //intake + pushout
+    dc().rightTrigger().whileTrue(Commands.parallel(
+      m_intake.runIntakeCommand(),
+      m_pushout.runPushOutCommand()
+    ));
+
+
+    //shooter
+   // dc().leftTrigger().whileTrue(m_shooter.runShooterCommand());
+    dc().leftTrigger().whileTrue(Commands.parallel(
+      m_intake.runIntakeCommand(),
+      m_hopper.runHopperCommand(),
+      m_shooter.runShooterCommand(),
+      //m_agitation.runAgitationCommand(),
+
+
+    ));
+
+    //hopper + reverse
+    dc().y().whileTrue(m_hopper.runHopperCommand());
+    dc().x().whileTrue(m_hopper.runReversehopperCommand());
+
+    //outtake + reverse hopper at same time (error)
+    //A_runOuttake.whileTrue(m_intake.runOuttakeCommand().parallelWith(m_hopper.runReversehopperCommand())) ;
+
+    
+    //shooter, kicker, hopper, intake, agitation
+
+
+   
     // ========================
 
     // SysId: run shooter quasistatic forward.
