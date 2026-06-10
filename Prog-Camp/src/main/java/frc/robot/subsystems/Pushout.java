@@ -83,13 +83,13 @@ public class Pushout extends SubsystemBase {
     {
         //list
         double[] pull_position = {11,9,7,5};
-        return Command.sequence(Commands.run(()-> {for (int i = 0;i<4;i++)
+        return Commands.sequence(Commands.run(()-> {for (int i = 0;i<4;i++)
         {
                 PushOutController.setSetpoint(pull_position[i],
                 ControlType.kMAXMotionPositionControl);
         PushOutController.setSetpoint(PushOutConstants.Extended_Position,
                 ControlType.kMAXMotionPositionControl); 
-        }}), this);
+        }}));
 
 
 

@@ -330,7 +330,7 @@ public class RobotContainer {
 
     // dc().rightTrigger().whileTrue(m_pushout.runPushOutCommand());
     //intake + pushout
-    dc().rightTrigger().whileTrue(Commands.parallel(
+    dc().leftTrigger().whileTrue(Commands.parallel(
       m_intake.runIntakeCommand(),
       m_pushout.runPushOutCommand()
     ));
@@ -338,7 +338,7 @@ public class RobotContainer {
 
     //shooter
    // dc().leftTrigger().whileTrue(m_shooter.runShooterCommand());
-    dc().leftTrigger().whileTrue(Commands.parallel(
+    dc().rightTrigger().whileTrue(Commands.parallel(
       m_intake.runIntakeCommand(),
       m_hopper.runHopperCommand(),
       m_shooter.runShooterCommand(),
