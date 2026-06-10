@@ -342,9 +342,7 @@ public class RobotContainer {
       m_intake.runIntakeCommand(),
       m_hopper.runHopperCommand(),
       m_shooter.runShooterCommand(),
-      //m_agitation.runAgitationCommand(),
-
-
+      m_pushout.runAgitationCommand()
     ));
 
     //hopper + reverse
