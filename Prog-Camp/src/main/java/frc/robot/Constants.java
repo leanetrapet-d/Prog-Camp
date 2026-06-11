@@ -155,8 +155,8 @@ public final class Constants {
   }
 
   public static class HopperConstants {
-    public static final int HOPPER_LEFT_ID = 16; // unknown
-    public static final int HOPPER_RIGHT_ID = 17; // unknown
+    public static final int HOPPER_LEFT_ID = 15; // unknown
+    public static final int HOPPER_RIGHT_ID = 16; // unknown
 
   
 
@@ -171,14 +171,14 @@ public final class Constants {
     public static final double a = 0.75;
 
 
-    public static final double HOPPER_RPM = -12500;
-    public static final double REVERSEHOPPER_RPM = 12500;
+    public static final double HOPPER_RPM = 12500;
+    public static final double REVERSEHOPPER_RPM = -12500;
 
   }
     
   public static class KickerConstants {
-    public static final int KICKER_LEFT_ID = 16; // unknown
-    public static final int KICKER_RIGHT_ID = 17; // unknown
+    public static final int KICKER_LEFT_ID = 13; // unknown
+    public static final int KICKER_RIGHT_ID = 14; // unknown
 
   
 
@@ -193,8 +193,8 @@ public final class Constants {
     public static final double a = 0.75;
 
 
-    public static final double KICKER_RPM = -12500;
-    public static final double REVERSEKICKER_RPM = 12500;
+    public static final double KICKER_RPM = 12500;
+    public static final double REVERSEKICKER_RPM = -12500;
 
   } 
 
@@ -247,19 +247,14 @@ public final class Constants {
     }
   }
     public static class PushOutConstants {
-    public static final int PUSHOUT_LEFT_ID = 15; // unknown
-    public static final int PUSHOUT_RIGHT_ID = 14; // unknown
+    public static final int PUSHOUT_ID = 17; // unknown
+
 
 
     // PID Constants
-    public static final double p = 0.006155;
+    public static final double p = 3.3;
     public static final double i = 0.000;
     public static final double d = 0.01;
-
-    // Feed-Forward Constants
-    public static final double s = 1.25;
-    public static final double v = 0.5;
-    public static final double a = 0.75;
 
 
     public static final double Extended_Position = 15;

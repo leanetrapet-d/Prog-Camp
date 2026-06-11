@@ -41,17 +41,17 @@ public class Hopper extends SubsystemBase {
 
 
     public void runHopper() {
-        HopperLeftController.setSetpoint(HopperConstants.REVERSEHOPPER_RPM,
+        HopperLeftController.setSetpoint(HopperConstants.HOPPER_RPM,
                 ControlType.kMAXMotionVelocityControl);
-        HopperRightController.setSetpoint(HopperConstants.REVERSEHOPPER_RPM,
+        HopperRightController.setSetpoint(HopperConstants.HOPPER_RPM,
                 ControlType.kMAXMotionVelocityControl);
 
     }
 
     public void runHopperReverse() {
-        HopperLeftController.setSetpoint(HopperConstants.HOPPER_RPM,
+        HopperLeftController.setSetpoint(HopperConstants.REVERSEHOPPER_RPM,
                 ControlType.kMAXMotionVelocityControl);
-        HopperRightController.setSetpoint(HopperConstants.HOPPER_RPM,
+        HopperRightController.setSetpoint(HopperConstants.REVERSEHOPPER_RPM,
                 ControlType.kMAXMotionVelocityControl);
 
     }

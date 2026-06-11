@@ -326,7 +326,6 @@ public class RobotContainer {
 
     // intake
     // X_runIntake.whileTrue(m_intake.runIntakeCommand());
-    A_runOuttake.whileTrue(m_intake.runOuttakeCommand());
 
     // dc().rightTrigger().whileTrue(m_pushout.runPushOutCommand());
     //intake + pushout

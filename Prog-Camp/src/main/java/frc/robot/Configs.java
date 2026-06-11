@@ -258,12 +258,7 @@ public static final class HopperSubsystem {
                             .p(PushOutConstants.p)
                             .i(PushOutConstants.i)
                             .d(PushOutConstants.d)
-                            .outputRange(-1, 1)
-                            .feedForward
-                            .kS(PushOutConstants.s)
-                            .kV(PushOutConstants.v)
-                            .kA(PushOutConstants.a)
-                            ;
+                            .outputRange(-1, 1);
 
                         PushOutMotorConfig.closedLoop
                         .maxMotion.maxAcceleration(1000000);
